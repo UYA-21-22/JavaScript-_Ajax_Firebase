@@ -1,0 +1,19 @@
+#contenedor {
+  width: 100%;
+}
+#cabecera {
+  float: left;
+  width: 150px;
+}
+#menu {
+  float: left;
+}
+
+#contenido {
+  float: left;
+  width: 550px;
+}
+
+#pie {
+  clear: both;
+}

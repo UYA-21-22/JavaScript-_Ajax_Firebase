@@ -1,0 +1,6 @@
+Apuntes- luego borrar
+
+En el fichero JSON
+[(), , , , , , ]
+en () debe de tener varios elementos tipo: [dni, nombre, compra[], modalidad de pago]. Todo esto es un elemento del array...
+Todo eso tiene que ser de una variable JSON. El JSON debe no debe estar en local, sino copiar el fichero e inicializar var nombreVariable.(?)
