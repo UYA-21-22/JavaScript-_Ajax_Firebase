@@ -6,7 +6,7 @@
       <!-- <link media="screen" href="./style.css" type="text/css" rel="stylesheet"> -->
       <link media="screen" href="./css/materialize.css" type="text/css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      
+      <script src="jquery-3.6.0.min.js"></script>
       <!-- <link media="screen" href="./estructura.css" type="text/css" rel="stylesheet"> -->
       <!-- <h1 class="clase2">DANSport</h1> -->
 
@@ -16,7 +16,65 @@
   </center>
 
   <body id="elementosTotales">
+
+      <!--Formulario prueba-->
+
+      <main> 
+        <form>
+          <input type="text" id="nombre">
+          <button id="btnEnviar">Enviar</button>
+        </form>
+      </main>
+
     <!-- Page Content goes here -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+      import {getAnalytics} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyD3yb40LvnRwKHYt5et3L7AUlXUfQi0ACE",
+        authDomain: "practica-6-27057.firebaseapp.com",
+        projectId: "practica-6-27057",
+        storageBucket: "practica-6-27057.appspot.com",
+        messagingSenderId: "157661183969",
+        appId: "1:157661183969:web:1eb56bfd7180a728d15ca0",
+        measurementId: "G-1ND61FL623"
+      };
+    
+      // Initialize Firebase
+      const firebase = require("firebase");
+      // Required for side-effects
+      require("firebase/firestore");
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      //Referencia a la base de datos
+      var database = firebase.database();
+      var referencia = database.ref('Usuario2');
+      referencia.set({
+        Year: 2002,
+        Nombre: Prueba
+      });
+      // Consultar datos, se muestran todos los datos en la raíz
+      referencia = database.ref('/');
+      //Consultar datos, se muestra la actividad del usuario1
+      referencia = database.ref('/Usuario1');
+      referencia.on('value', snapshot => {
+        console.log('_______________________');
+        console.log(snapshot.val().actividad);
+      });
+      //Consultar datos, se accede a la actividad del usuario2
+      referencia = database.ref('/Usuario2/Nombre');
+      referencia.on('value', snapshot => {
+        console.log('_______________________');
+        console.log(snapshot.val());
+      });
+    </script>
+
     <nav>
       <div class="nav-wrapper deep-purple lighten-3">
         <a href="" class="brand-logo">DANSport</a>

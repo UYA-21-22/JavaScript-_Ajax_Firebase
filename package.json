@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "materialize-css": "^1.0.0-rc.2"
-  }
+  },
+  "name": "javascript_ajax_firebase",
+  "description": "### Grupo 6:  * Stephanie Andreína Arismendi Escobar (alu0101351728) * Dana Belen Choque Zárate (alu0101328348) * Ana Virginia Giambona Díaz (alu0101322650) * Noelia Ibáñez Silvestre (alu0101225555)",
+  "version": "1.0.0",
+  "main": "jquery-3.6.0.min.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UYA-21-22/JavaScript_Ajax_Firebase.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UYA-21-22/JavaScript_Ajax_Firebase/issues"
+  },
+  "homepage": "https://github.com/UYA-21-22/JavaScript_Ajax_Firebase#readme"
 }
