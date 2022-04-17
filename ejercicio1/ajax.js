@@ -17,7 +17,6 @@ $(document).ready(function(){
         // información a enviar
         // serialize: transformar información de un formulario a una cadena de datos
         data: $('#form').serialize(),
-       
         // código a ejecutar si la petición es satisfactoria
         // la respuesta es pasada como argumento de la función
         success: function (result){
@@ -43,63 +42,21 @@ $(document).ready(function(){
       });
     // }
   });
-  
-  /*
-  // función de validación del nombre
-  function validarNombre() {
-    let inputValueName = $("name").val();
-    if(inputValueName == null || inputValueName.length == 0 || !/^[A-Z]+$/i.test(inputValueName)) {
-      alert('Error. El nombre sólo contiene letras');
-      return false;
-    }
-    return true;
-  }
-
-  // función de validación del año de nacimiento
-  function validacionAnyo() {
-    let inputValueAnyo = $("input").val();
-      if( inputValueAnyo == null || inputValueAnyo.length == 0 ||  !/^[0-9]+$/.test(inputValueAnyo) ) {
-        alert('Error. El año son números.');
-        return false;
-      }
-      return true;
-  }
-
-  // función de validación del ID
-  function validacionID() {
-    let inputValueID = $("#id").val();
-    if( inputValueID == null || inputValueID.length == 0 ||  !/^[0-9]+$/.test(inputValueID) ) {
-      alert('Error. El ID deben ser números.');
-      return false;
-    }
-    return true;
-  }
-
-  // funcion validación email
-  function validacionEmail()  {
-    let inputValueEmail = $("#email").val();
-    if( inputValueEmail == null || inputValueEmail.length == 0 || !/^[^@]+@[^@]+.[a-zA-Z]{2,}$/.test(inputValueEmail) ) {
-      alert('Error. Formato email incorrecto.');
-      return false
-    } 
-    return true;
-  }
-  */
- 
+   
   function validaForm(){
     // Campos de texto
     let inputValueName = $("#name").val();
-    // let inputValueId = $("#id").val();
-    // let inputValueYear = $("#year").val();
-    // let inputValueEmail = $("#email").val();
-    // if(inputValueId == ""){
-    //   alert("El campo ID no puede estar vacío.");
-    //   $("#id").focus();
-    //   return false;
-    // } else if(inputValueId == null || inputValueId.length == 0 ||  !/^[0-9]+$/.test(inputValueId) ) {
-    //   alert('Error. El ID deben ser números.');
-    //   return false;
-    // }
+    let inputValueId = $("#id").val();
+    let inputValueYear = $("#year").val();
+    let inputValueEmail = $("#email").val();
+    if(inputValueId == ""){
+      alert("El campo ID no puede estar vacío.");
+      $("#id").focus();
+      return false;
+    } else if(inputValueId == null || inputValueId.length == 0 ||  !/^[0-9]+$/.test(inputValueId) ) {
+      alert('Error. El ID deben ser números.');
+      return false;
+    }
 
     if(inputValueName == null){
         alert("El campo Nombre no puede estar vacío.");
@@ -110,23 +67,23 @@ $(document).ready(function(){
       return false;
     }
 
-    // if(inputValueYear == ""){
-    //     alert("El campo year no puede estar vacío.");
-    //     $("#year").focus();
-    //     return false;
-    // } if( inputValueYear == null || inputValueYear.length == 0 ||  !/^[0-9]+$/.test(inputValueYear) ) {
-    //   alert('Error. El año son números.');
-    //   return false;
-    // }
+    if(inputValueYear == ""){
+        alert("El campo year no puede estar vacío.");
+        $("#year").focus();
+        return false;
+    } if( inputValueYear == null || inputValueYear.length == 0 ||  !/^[0-9]+$/.test(inputValueYear) ) {
+      alert('Error. El año son números.');
+      return false;
+    }
 
-    // if(inputValueEmail == ""){
-    //     alert("El campo Dirección no puede estar vacío.");
-    //     $("#email").focus();
-    //     return false;
-    // } else if( inputValueEmail == null || inputValueEmail.length == 0 || !/^[^@]+@[^@]+.[a-zA-Z]{2,}$/.test(inputValueEmail) ) {
-    //   alert('Error. Formato email incorrecto.');
-    //   return false
-    // } 
+    if(inputValueEmail == ""){
+        alert("El campo Dirección no puede estar vacío.");
+        $("#email").focus();
+        return false;
+    } else if( inputValueEmail == null || inputValueEmail.length == 0 || !/^[^@]+@[^@]+.[a-zA-Z]{2,}$/.test(inputValueEmail) ) {
+      alert('Error. Formato email incorrecto.');
+      return false
+    } 
     return true; // Si todo está correcto
 }
 });
