@@ -8,17 +8,28 @@
     <h1>Formulario</h1>
     <!-- <main>  -->
       <form id="form">
-        <label>Insertar postID: </label>
-        <input type="text" id="nombref">
-        <button id="btnEnviar">Enviar</button>
+        <!-- <div class="input-field col s6"> -->
+          <label for="id">Insertar id: </label>
+          <input type="text" id="idform">
+
+          <label for="name">Insertar nombre: </label>
+          <input type="text" id="nombref">
+          
+          <label for="year">Insertar año de nacimiento: </label>
+          <input type="text" id="yearform">
+
+          <label for="email">Insertar email: </label>
+          <input type="text" id="emailform">
+          <button id="btnEnviar">Enviar</button>
+        <!-- </div> -->
       </form>
     <!-- </main> -->
     <p> Output: </p>
     <div id="cuadrorespuesta">
     <br>
-    <p id="result"></p>
+    <p id="resultado"></p>
     <script src="./jquery-3.6.0.min.js"></script>
-	  <script src="./ajax.js"></script>
+	  <script type="text/javascript" src="./ajax.js"></script>
   </body>
 
 </html>

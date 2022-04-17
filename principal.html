@@ -12,6 +12,7 @@
       <!-- <h1 class="clase2">DANSport</h1> -->
 
       <script src="js/ejercicio3.js"></script>
+      <script src="./ejercicio1/ajax.js"></script>
       
     </head>
   </center>
@@ -20,66 +21,9 @@
 
       <!--Formulario prueba-->
 
-      <main> 
-        <form>
-          <input type="text" id="nombref">
-          <button id="btnEnviar">Enviar</button>
-        </form>
-      </main>
-    <!-- Page Content goes here -->
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      
-      import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-      import {getAnalytics} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
-      import {getDatabase} from "https://practica-6-27057-default-rtdb.europe-west1.firebasedatabase.app/"; //???
-      
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyD3yb40LvnRwKHYt5et3L7AUlXUfQi0ACE",
-        authDomain: "practica-6-27057.firebaseapp.com",
-        projectId: "practica-6-27057",
-        storageBucket: "practica-6-27057.appspot.com",
-        messagingSenderId: "157661183969",
-        appId: "1:157661183969:web:1eb56bfd7180a728d15ca0",
-        measurementId: "G-1ND61FL623"
-      };
-    
-      // Initialize Firebase
-      const firebase = require("firebase");
-      // Required for side-effects
-      require("firebase/firestore");
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      //Referencia a la base de datos
-      var database = firebase.database();  //ESTO de manera original va descomentado
-      var referencia = database.ref('Usuario2');
-      referencia.set({
-        Year: 2002,
-        Nombre: Prueba
-      });
-      // Consultar datos, se muestran todos los datos en la raíz
-      referencia = database.ref('/');
-      //Consultar datos, se muestra la actividad del usuario1
-      referencia = database.ref('/Usuario1');
-      referencia.on('value', snapshot => {
-        console.log('_______________________');
-        console.log(snapshot.val().actividad);
-      });
-      //Consultar datos, se accede a la actividad del usuario2
-      referencia = database.ref('/Usuario2/Nombre');
-      referencia.on('value', snapshot => {
-        console.log('_______________________');
-        console.log(snapshot.val());
-      });
-    </script>
 
     <!--Añadido-->
-    <script src="js/practica6.js"></script>
+    
 
     <nav>
       <div class="nav-wrapper deep-purple lighten-3">
@@ -260,6 +204,38 @@
       
       <script src="js/ejercicio4.js" type="text/javascript"></script>
     </div>
+  </div>
+
+  
+  <!-- <main>  -->
+    <!-- <form> -->
+      <!-- <div class="input-field col s6"> -->
+        <!-- <input id="nameImput" name="name" type="string" placeholder="Introduce el año de nacimiento" class="validate" required> -->
+        <!-- <input id="nameImput" name="Nombre" type="string" placeholder="Introduce el nombre de la persona" class="validate" required> -->
+        <!-- <button id="boton" class="btn waves-effect waves-light blue accent-4" type="submit" name="action">Obtener Personas<i class="material-icons right">send</i></button> -->
+        <!-- <input class="waves-effect waves-light btn purple darken-3" type="button" value="buscar" onclick="doit()"> -->
+        <!-- <div id="resultadoN"></div> -->
+        <!-- <p id="resultadoN"></p> -->
+      <!-- </div> -->
+    <!-- </form> -->
+  <!-- </main> -->
+  <div class="container">
+    <h4>JSON con AJAX</h4>
+    <div class="row">
+      <form class="col s12 m10 l8" id="form">
+        <div class="row">
+          <div class="input-field col s12 m10 l8">
+            <input id="nameImput" name="name" type="string" placeholder="Introduce el nombre" class="validate" required>     
+          </div>
+        </div>
+      </form> 
+    </div>
+  </div>
+  <div class="container">
+      <button id="btnEnviar" class="btn waves-effect waves-light blue accent-4" type="submit" name="action">Obtener Personas<i class="material-icons right">send</i></button>
+  </div>
+  <div class="container">
+      <p id="resultado"></p>
   </div>
 
       <footer class="page-footer purple lighten-3">

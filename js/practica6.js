@@ -1,5 +1,5 @@
 // Atributo definido en principal -> formulario de pruebaconst dat= firebase.database();ififed erbmo
-const nombref = document.ggetElementById('nombref');
+const nombref = document.getElementById('nombref');
 
 // Si no funciona, probar con 'const'?
 var database = firebase.database();
