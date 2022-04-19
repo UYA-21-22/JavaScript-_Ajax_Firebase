@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   $('#btnEnviar').mouseup(function() {
     // primero validamos los campos del formulario?
-    // if(validaForm()) {
+    if(validaForm()) {
       console.log('Holi');
       $.ajax({
         // url para la petición
@@ -40,12 +40,13 @@ $(document).ready(function(){
           
         },
       });
-    // }
+    }
   });
    
   function validaForm(){
     // Campos de texto
-    let inputValueName = $("#name").val();
+    inputValueName = document.getElementById('nameName');
+    console.log(inputValueName);
     let inputValueId = $("#id").val();
     let inputValueYear = $("#year").val();
     let inputValueEmail = $("#email").val();
