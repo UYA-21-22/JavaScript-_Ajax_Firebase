@@ -1,7 +1,7 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-analytics.js";
+// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -15,9 +15,20 @@ const firebaseConfig = {
   storageBucket: "practica-6-27057.appspot.com",
   messagingSenderId: "157661183969",
   appId: "1:157661183969:web:1eb56bfd7180a728d15ca0",
-  measurementId: "G-1ND61FL623"
+  // measurementId: "G-1ND61FL623"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+export const saveUser= (id,name,year,email) => {
+
+  addDoc(collection(db, 'users'),{id,name,year,email})
+
+}
+
+
+export const getUsers = () => getDocs(collection(db, 'users'))
+
+export const updateUser =(id, newfields)=> updateDoc(doc(db, 'users',id),newfields)
+// Initialize Firebase
+// const analytics = getAnalytics(app);
