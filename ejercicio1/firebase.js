@@ -26,7 +26,6 @@ export const saveUser= (id,name,year,email) => {
 
 }
 
-
 export const getUsers = () => getDocs(collection(db, 'users'))
 
 export const updateUser =(id, newfields)=> updateDoc(doc(db, 'users',id),newfields)
