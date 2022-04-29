@@ -20,10 +20,30 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
+//
+const db = firebase.firestore();
+
+
+/*
 export const saveUser= (id,name,year,email) => {
 
   addDoc(collection(db, 'users'),{id,name,year,email})
 
+}
+*/
+
+//¿Debería estar en registro?
+const SaveUser = (user) => {
+
+  db.collection("Usuarios").add({
+    user
+  })
+  .then((docRef) => {
+    MSJOK(); //si todo va bien, muestra mensaje OK
+  })
+  .catch((error) => {
+    MSJERROR(); //si falla algo, muestra mensaje error
+  });
 }
 
 export const getUsers = () => getDocs(collection(db, 'users'))
@@ -31,3 +51,32 @@ export const getUsers = () => getDocs(collection(db, 'users'))
 export const updateUser =(id, newfields)=> updateDoc(doc(db, 'users',id),newfields)
 // Initialize Firebase
 // const analytics = getAnalytics(app);
+
+//Mensaje Ok con sweetalert
+
+const MSJOK = () => {
+  Swal.fire(
+    'Buen trabajo!',
+    'Datos guardados correctamente!',
+    'success'
+  )
+}
+
+const MSJERROR = () => {
+  Swal.fire(
+    'Ups!',
+    'Los datos no fueron guardados correctamente!',
+    'error'
+  )
+}
+
+//BtnEnviar es el id del botón de la práctica de AJAX y Firebase
+$("#btnEnviar").on('click',()=>{
+  let nombre = $("#nombreFormulario").val();
+
+  const user = {
+    nombre
+  }
+
+  SaveUser(user);
+})
